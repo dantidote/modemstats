@@ -10,7 +10,12 @@ $login = "$modem/login?arg=YWRtaW46cGFzc3dvcmQ=&_n=$nonce&_=" . time;
 $channel_info = "$modem/walk?oid=1.3.6.1.2.1.10.127.1.1;&_n=$nonce&_=" . time;
 $data_usage = "$modem/walk?oid=1.3.6.1.2.1.2.2.1;&_n=$nonce&_=" . time;
 
-$date = `date +"%D %T"`;
+#$date = `date +"%D %T"`;
+($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime(time);
+$mon += 1;
+$year += 1900;
+$date = "$mon/$mday/$year $hour:$min:$sec";
+
 chomp $date;
 
 my $ua = LWP::UserAgent->new;
