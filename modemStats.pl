@@ -56,5 +56,5 @@ foreach $channel (@channels){
   $us = $$data{$upstream};
    
 
-  print "$date,$$objs{$dcid},$$objs{$power},$$objs{$snr},$$objs{$corrected},$$objs{$uncorrectable},$ds,$us\n";
+  print "$date,$channel,$$objs{$power},$$objs{$snr},$$objs{$corrected},$$objs{$uncorrectable},$ds,$us\n";
 }
